@@ -43,14 +43,15 @@ public class Planet extends ExampleBase {
     @Override
     public void update(long delta) {
 
-        int steps = 2;
-        float dt = 1.0f / 60.0f / (float) steps;
-
-        for (int j = 0; j < steps; j++) {
-            space.step(dt);
-            // Update the static body spin so that it looks like it's rotating.
-            planetBody.updatePosition(dt);
-        }
+//        int steps = 2;
+//        float dt = 1.0f / 60.0f / (float) steps;
+//
+//        for (int j = 0; j < steps; j++) {
+//            space.step(dt);
+//            // Update the static body spin so that it looks like it's rotating.
+//            planetBody.updatePosition(dt);
+//        }
+        space.step(0.016f);
     }
 
 
