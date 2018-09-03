@@ -99,6 +99,8 @@ public class PinJoint extends Constraint {
 		this.r1 = a.getTransform().transformVect(cpvsub(this.anchorA, a.getCenterOfGravity()));
 		this.r2 = b.getTransform().transformVect(cpvsub(this.anchorB, b.getCenterOfGravity()));
 
+//		System.out.println(r1 + "  " + r2);
+
 		Vector2f delta = cpvsub(cpvadd(b.getPosition(), this.r2), cpvadd(a.getPosition(), this.r1));
 		float dist = cpvlength(delta);
 		this.n = cpvmult(delta, 1.0f / (dist != 0 ? dist : Float.POSITIVE_INFINITY));

@@ -2,6 +2,10 @@ package org.physics.jipmunk
 
 import org.physics.jipmunk.Util.cpv
 import org.physics.jipmunk.Util.cpvadd
+import ru.alexkulikov.madcars.Buggy
+import ru.alexkulikov.madcars.Bus
+import ru.alexkulikov.madcars.CarGroup
+import ru.alexkulikov.madcars.Direction
 import kotlin.Array
 import kotlin.math.PI
 import kotlin.math.cos
@@ -52,6 +56,10 @@ class MadcarsMap : ExampleBase() {
             segment.elasticity = 0f
             space.addShape(segment)
         }
+
+        val car = Buggy(1, Direction.LEFT_DIRECTION, space)
+        car.addToSpace()
+        car.setPosition(cpv(200f,200f))
 
         return space
     }

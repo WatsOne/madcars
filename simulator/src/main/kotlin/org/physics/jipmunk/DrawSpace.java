@@ -27,6 +27,8 @@ import java.nio.FloatBuffer;
 import com.jogamp.opengl.GL;
 import com.jogamp.opengl.GL2;
 
+import org.physics.jipmunk.*;
+import org.physics.jipmunk.Shape;
 import org.physics.jipmunk.constraits.*;
 
 import static org.physics.jipmunk.Util.cpv;
@@ -299,7 +301,7 @@ public class DrawSpace {
 			float matrix[] =
 					{ cos, sin, 0.0f, 0.0f, -sin * s, cos * s, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, x, y, 0.0f, 1.0f, };
 
-			gl.glMultMatrixf(matrix, matrix.length);
+			gl.glMultMatrixf(matrix, 0);
 			gl.glDrawArrays(GL.GL_LINE_STRIP, 0, springVAR.length / 2);
 		}
 		gl.glPopMatrix();
